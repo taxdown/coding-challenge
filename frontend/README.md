@@ -104,9 +104,9 @@ Easy and simple no? **So we are done!** 🚀!
 
 I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us?
 
-Joaquín Fernandez - [https://github.com/JoaquinFernandez](https://github.com/JoaquinFernandez)
+Joaquin Fernandez - [https://github.com/JoaquinFernandez](https://github.com/JoaquinFernandez)  
 Cristian Castillo - [https://github.com/Ccastillo06](https://github.com/Ccastillo06)
 
 This way, we can review your code and have it at hand for the next step, a personal interview! 👻
 
-Good luck with the challenge! Enjoy it and do your best! 
+Good luck with the challenge! Enjoy it and do your best!
