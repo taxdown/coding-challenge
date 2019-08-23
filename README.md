@@ -20,11 +20,11 @@ We have built the first fully digital tax advisor in Spain, and we are going int
 
 You will help the dev team design and architect the future of TaxDown. We are continuously exploring new technologies and applying the methodologies that fit us the best, you will be making your own decissions on the best path to follow and will be challenged by experienced developers.
 
-Want to know more, why not take the challenge! :video_game:
+Do you want to know more, why not take the challenge! :video_game:
 
 ### You want to take on the challenge?
 
-Feel free to tackle the challenge, creating a private repo and invite us!
+Feel free to tackle the challenge, create a private repo and invite us!
 
 Joaquin Fernandez - [https://github.com/JoaquinFernandez](https://github.com/JoaquinFernandez)  
 Cristian Castillo - [https://github.com/Ccastillo06](https://github.com/Ccastillo06)
