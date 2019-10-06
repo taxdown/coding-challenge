@@ -55,9 +55,10 @@ And last but not least, it would be great if you add tests. Easy and simple no? 
 
 I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us?
 
-Joaquin Fernandez - [https://github.com/JoaquinFernandez](https://github.com/JoaquinFernandez)  
-Cristian Castillo - [https://github.com/Ccastillo06](https://github.com/Ccastillo06)
-
 This way, we can review your code and have it at hand for the next step, a personal interview! 👻
+
+Check who you can share it with:
+
+https://github.com/TaxDownAutomation/coding-challenge
 
 Good luck with the challenge! Enjoy it and do your best!
