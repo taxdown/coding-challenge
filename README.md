@@ -26,5 +26,8 @@ Do you want to know more, why not take the challenge! :video_game:
 
 Feel free to tackle the challenge, create a private repo and invite us!
 
-Joaquin Fernandez - [https://github.com/JoaquinFernandez](https://github.com/JoaquinFernandez)  
-Josep Servat - [https://github.com/servatj](https://github.com/servatj)
+[Joaquín Fernández](https://github.com/JoaquinFernandez)
+
+[Santiago López Bayo](https://github.com/santitipro)
+
+[Fernán Ramos Saiz](https://github.com/Fernan-Ramos)
