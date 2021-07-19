@@ -16,7 +16,9 @@ In this challenge (won't be long, we promise), you'll be using **Node.js** to cr
 
 This service will allow a GET request on an endpoint of your choice. It will then call the following URL and return that response to the original request. The URL is:
 
-<https://api.exchangeratesapi.io/latest>
+<https://api.exchangeratesapi.io/latest>?access_key=**<your_access_key>**
+
+**Note:** In order to perform the test you will have to obtain an access key at the following address: https://exchangeratesapi.io
 
 The response from that service should have this format:
 
