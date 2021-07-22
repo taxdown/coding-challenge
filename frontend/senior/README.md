@@ -27,6 +27,7 @@ We use webpack like bundler so it's important that the project make use of it, y
 First, you have to create a login form that allows a user to access the application. 
 
 Once logged in, the application will show a dashboard with a list of active user taxes. The information of these taxes will be obtained from a fake API built with **json-server** or similar.
+https://github.com/typicode/json-server
 
 ```JSON
 endpoint: /taxes
