@@ -4,16 +4,60 @@
 
 ### About the position 💻
 
-Being a **Frontend Engineer** means that you know how to apply the best solutions to the problems that can appear in the client of a Web Application  (don't forget about the communication with backend services!).
+Being a **Frontend Engineer** means that you know how to apply the best solutions to the problems that can appear in the client of a Web Application (don't forget about the communication with backend services!).
 So we are going to test that and see how good of a developer you are regarding the frontend part of a project! 🔥
 
 ### Take me to the challenge! 🤟
 
-In this challenge (wont be long, we promise), you'll be using **React** to create a SPA that renders a form given. The data of this form should be given from an API. This API could be a fake API created for example with ***json-server*** or similars,the key is to be able to create an architecture that allows the front to communicate with the API.
+In this challenge (wont be long, we promise), you'll be using **React** to create a SPA. 
 
-Here's the sample JSON data structure that should provide the fake API:
+## What we are looking for
+- Structure organization
+- Component based Architecture
+- Apply SOLID principles
+- Abstraction for external libraries
+- Store managment
+- Route managment
+- Code testing
+
+We use webpack like bundler so it's important that the project make use of it, you are free to use another bundler (the use of webpack will be a plus!).
+
+
+#### First step 🥇
+First, you have to create a login form that allows a user to access the application. 
+
+Once logged in, the application will show a dashboard with a list of active user taxes. The information of these taxes will be obtained from a fake API built with **json-server** or similar.
+
+```JSON
+endpoint: /taxes
+
+{
+	"taxes":  [
+		{
+			"id":  "1",
+			"name":  "Tax Season 2021",
+			"year": "2021",
+		},
+		{
+			"id":  "2",
+			"name":  "Tax Season 2020",
+			"year": "2020",
+		},
+	]
+}
 
 ```
+
+The information obtained from the API must be stored in the store using **Redux**, the use of middleware such as **Redux Saga** for handling asynchronous side effects will be a plus.
+
+#### Second step 🥈
+
+Each tax will contain a button that will allow adding submissions.
+
+When the button is clicked, it will take you to a new screen where a request will be made to the fake API to obtain a list of inputs.
+
+```JSON
+/taxes/{id}/form
 {
 	"inputFields":  [
 		{
@@ -39,61 +83,43 @@ Here's the sample JSON data structure that should provide the fake API:
 	]
 }
 ```
-
-We use webpack like bundler so it's important that the project make use of it, you are free to use another bundler (the use of webpack will be a plus!).
-
-
-#### First step 🥇
-
-The form should be able to grow in size depending on the new input given in the API.
-
-After showing the form, let the user fill the fields and submit the answer (a `console.log()` should be enough to show it).
+Here, a dynamic form should be rendered based on the inputs defined in the JSON response.
 
 Remember that some fields may have validations in their keys (`maxLength` for the text inputs) and they can increase or change in the future.
-
-PS: Don't forget to give it some style (not too crazy, just make it look nice)!
-
-#### Second step 🥈
-
-We got the form running and submitting our data! So now what?
-
-We are using the latest React APIs in our projects, so you'll have to face **Context and Hooks** in your daily life with us. Did you use class components? Let's make them into functional ones and use hooks to handle the state properly! 💪
-
-And now that you have some hooks around, let's store all our submissions into a global state in our application.
-
-```
-	// exampleState.js
-
-	const state = {
-		submissions: [], // Insert the submissions in this attribute
-	}
-```
-
-This state should be store using Redux. It's important use Redux Sagas or similars to handling the asynchronous side effects of Redux.
 
 
 #### Third  step 🥉 (These medals should go from bronce to gold)
 
-Last step and we are done! We are saving our submissions in the state, so let's go and show them in a list of some kind!
+When the inputs are completed and the user clicks on submit button a POST request to **/taxes/{id}/form** with the values of the form will be made.
 
-You should use **React Router** to create a new route with the list and one with the form we created before.
+A list of submissions should be created in the store for that specific tax.
 
-In the new **List** route, show all submissions by mapping them so we can see the key/value pairs introduced by the user. Each submission should be able to be deleted and edited.
+**Note**: _It will be submissions lists for the different taxes_.
+
+All submissions by mapping them so we can see the key/value pairs introduced by the user.
+
+Would be a screen where will be showed the taxes submissions and where the user can filter by tax year, name, surname and age 
 
 ```
-	Submission 1
-		Name: Bruce
-		Surname: Wayne
-		Age: 26
-	Submission 2
-		Name: Clark
-		Surname: Kent
-		Age: 22
+	Tax: 2021
+		Submission 1
+			Name: Bruce
+			Surname: Wayne
+			Age: 26
+		Submission 2
+			Name: Clark
+			Surname: Kent
+			Age: 22
 ```
 
 And last but not least, it would be great if you added one or two **tests** to check for render stability or proper mapping of values ⭐️. We use **jest** and **react-testing-library** to testing.
 
 Easy and simple no? **So we are done!** 🚀!
+
+### Optional
+
+Add the option to edit and delete each submission.
+
 
 ### How can I share my solution?
 
