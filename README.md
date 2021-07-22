@@ -26,16 +26,4 @@ Do you want to know more, why not take the challenge! :video_game:
 
 Feel free to tackle the challenge, create a private repo and invite us!
 
-*Frontend*
-
-[Fernán Ramos Saiz](https://github.com/Fernan-Ramos)
-
-*Mobile*
-
-[Santiago López Bayo](https://github.com/santitipro)
-
-*Backend*
-
-[Joaquín Fernández](https://github.com/JoaquinFernandez)
-
-[Thomas Trujillo](https://github.com/tjtrujillo)
+[Clarette Terrasi Diaz](https://github.com/cterrasid)
