@@ -24,6 +24,4 @@ Do you want to know more, why not take the challenge! :video_game:
 
 ### You want to take on the challenge?
 
-Feel free to tackle the challenge, create a private repo and invite us!
-
-[Clarette Terrasi Diaz](https://github.com/cterrasid)
+Feel free to tackle the challenge, create a private repo and invite :arrow_right: [Clarette Terrasi Diaz](https://github.com/cterrasid)
