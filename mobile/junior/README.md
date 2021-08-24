@@ -119,7 +119,7 @@ I guess you used Git all the way here and made a few commits already, so how abo
 
 This way, we can review your code and have it at hand for the next step, a personal interview! 👻
 
-Check who you should share it with:
+Look at this README, to see who you should share it with ⬇️ :
 
 https://github.com/TaxDownAutomation/coding-challenge
 
