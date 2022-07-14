@@ -18,7 +18,7 @@ This service will allow a GET request on an endpoint of your choice. It will the
 
 <https://api.exchangeratesapi.io/latest>?access_key=**<your_access_key>**
 
-**Note:** In order to perform the test you will have to obtain an access key at the following address: https://exchangeratesapi.io
+**Note:** In order to perform the test you will have to obtain an access key at the following address: <https://exchangeratesapi.io>
 
 The response from that service should have this format:
 
@@ -55,11 +55,8 @@ And last but not least, it would be great if you add tests. Easy and simple no? 
 
 ## How can I share my solution? 🔥
 
-I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us?
+I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us [Thomas Trujillo](https://github.com/tjtrujillo)
 
 This way, we can review your code and have it at hand for the next step, a personal interview! 👻
-
-Look at this README, to see who you should share it with ⬇️ :
-https://github.com/TaxDownAutomation/coding-challenge
 
 Good luck with the challenge! Enjoy it and do your best!

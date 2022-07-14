@@ -1,4 +1,6 @@
-![](https://github.com/TaxDownAutomation/coding-challenge/raw/master/assets/logo.png)
+# Coding challenges
+
+![Logo](https://github.com/TaxDownAutomation/coding-challenge/raw/master/assets/logo.png)
 
 ## About us
 
@@ -24,4 +26,4 @@ Do you want to know more, why not take the challenge! :video_game:
 
 ### You want to take on the challenge?
 
-Feel free to tackle the challenge, create a private repo and invite :arrow_right: [Joaquin Fernandez](https://github.com/JoaquinFernandez)
+Feel free to tackle the challenge, create a private repo and invite us!

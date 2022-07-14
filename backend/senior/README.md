@@ -6,19 +6,17 @@ You will be building the backbone of TaxDown. Working shoulder to shoulder with 
 
 We are looking for someone who can help us grow by contributing their experience and their desire to do things well. Designing architectures, solving problems, giving ideas and, of course, developing quality software are the things you will do here.
 
-The main objective is that the whole team can learn from you. And of course, we hope that you can learn a lot from us. It is always important to grow while working and we want you to become more senior than you already are with us (the real "Win - Win" 🚀). 
+The main objective is that the whole team can learn from you. And of course, we hope that you can learn a lot from us. It is always important to grow while working and we want you to become more senior than you already are with us (the real "Win - Win" 🚀).
 
 ## Take me to the challenge! 🤟
 
-
-In this challenge (don't worry we don't want you to do work for free, we'll keep it short), you will have to create an API for the customer management of an online motorbike shop. The idea is to use **Node.js** (This is our base technology) to create this API. The design of the "Customer" entity, the database technology and the structure of the project are your choice. 
+In this challenge (don't worry we don't want you to do work for free, we'll keep it short), you will have to create an API for the customer management of an online motorbike shop. The idea is to use **Node.js** (This is our base technology) to create this API. The design of the "Customer" entity, the database technology and the structure of the project are your choice.
 
 👂 *Everything you consider "Best Practices" is mandatory to implement ("We **LOVE** testing")*
 
-
 ### First step 🌟
 
-Create a REST API that allows you to perform CRUD operations for a "Customer" entity with the minimum attributes that you think an online shop selling motorbikes should store. 
+Create a REST API that allows you to perform CRUD operations for a "Customer" entity with the minimum attributes that you think an online shop selling motorbikes should store.
 
 Once the CRUD operations has been done, create an specific method to add an "available credit" to customers.
 
@@ -42,12 +40,8 @@ And last but not least, it would be great if you add tests. Easy and simple no? 
 
 ## How can I share my solution? 🔥
 
-I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us?
+I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us [Thomas Trujillo](https://github.com/tjtrujillo)
 
 This way, we can review your code and have it at hand for the next step, a personal interview! 👻
-
-Look at this README, to see who you should share it with ⬇️ :
-
-https://github.com/TaxDownAutomation/coding-challenge
 
 Good luck with the challenge! Enjoy it and do your best!
