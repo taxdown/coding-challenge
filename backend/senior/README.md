@@ -38,6 +38,17 @@ Prepare to be asked a lot of questions on your choices 😆
 
 And last but not least, it would be great if you add tests. Easy and simple no? **So we are done!**
 
+## What will you value? 👌
+
+Some of the things we would like to find in your solution (not necessarily all) are:
+
+- SOLID
+- API Design
+- Testing
+- DDD
+- Hexagonal
+- Serverless
+
 ## How can I share my solution? 🔥
 
 I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us [Thomas Trujillo](https://github.com/tjtrujillo)
