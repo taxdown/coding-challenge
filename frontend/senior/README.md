@@ -20,7 +20,7 @@ In this challenge (wont be long, we promise), you'll be using **React** to creat
 - Route managment
 - Code testing
 
-We use webpack like bundler so it's important that the project make use of it, you are free to use another bundler (the use of webpack will be a plus!).
+We use vite like bundler, but you are free to use another plataform like Next, CRA or webpack to create the SPA and transpile the code.
 
 ## First step 🥇
 
@@ -48,8 +48,7 @@ endpoint: /taxes
 }
 
 ```
-
-The information obtained from the API must be stored in the store using **Redux**, the use of middleware such as **Redux Saga** for handling asynchronous side effects will be a plus.
+The information obtained from the API (store) must be managed by **React Query**, we use **React Query** for managing the asynchronous data, so it required.
 
 ## Second step 🥈
 
