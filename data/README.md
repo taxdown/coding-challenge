@@ -14,7 +14,9 @@ One of our responsabilities as the Data team is to keep track of the online ads 
 
 In this challenge (don't worry we don't want you to do work for free, we'll keep it short), you will have to implement a tool that is able to parse log files containing the online visits and gather a couple of metrics based on aggregates.
 
-The idea is to use **Python** which is the language we use in the team, any other decision is your own although we encourage you to NOT use too many external libraries. Also do not use any external databases or cache such as Redis.
+The idea is to use **Python** which is the language we use in the team, any other decision is your own although we encourage you to NOT use too many external libraries. That includes, Spark, Panda, Numpy, etc, our main goal is to evaluate how you process the data as raw as possible, the data collections you choose, how you buffer data, etc and we feel like these libraries are high level and abstract all that and it doesn’t let us evaluate all of that.
+
+Also do not use any external databases or cache such as Redis.
 
 The only libraries we would like you to use are:
 - Anything related with testing the solution.
