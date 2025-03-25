@@ -10,7 +10,7 @@ The main objective is that the whole team can learn from you. And of course, we 
 
 ## Take me to the challenge! 🤟
 
-In this challenge (don't worry we don't want you to do work for free, we'll keep it short), you will have to create an API for the customer management of an online motorbike shop. The idea is to use **Node.js** (This is our base technology) to create this API. The design of the "Customer" entity, the database technology and the structure of the project are your choice.
+In this challenge (don't worry we don't want you to do work for free, we'll keep it short), you will have to create an API for the customer management of an online motorbike shop. The idea is to use **Node.js** (This is our base technology) with Typescript to create this API. The design of the "Customer" entity, the database technology and the structure of the project are your choice.
 
 👂 *Everything you consider "Best Practices" is mandatory to implement ("We **LOVE** testing")*
 
