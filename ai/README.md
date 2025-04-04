@@ -10,6 +10,7 @@ You will explore, evaluate, and implement the latest AI trends and techniques, w
 
 We value learning, experimentation, and pushing boundaries. We want you to bring your unique perspective, help us learn, and become an even more impactful AI expert with us (the real "Win - Win" 🚀).
 
+👂 *We value robust, interpretable, and well-documented AI solutions. Show us how you think about safety, edge cases, and potential biases in your implementation.*
 
 ## Take me to the challenge! 🤟
 
@@ -92,7 +93,7 @@ Finally, here's the signature of the IBAN change tool our agent uses:
     *   How could your solution handle way more conversations in real-time?
     *   Any ideas to make the `dataset` even better for assessing guardrails like this? How would you implement those improvements?
 
-👂 *Everything you consider "Best Practices" for AI/ML development (like clear code, documentation, and especially **testing your logic**) is encouraged! ("We **LOVE** seeing thoughtful testing")*
+👂 *We value robust, interpretable, and well-documented AI solutions. Show us how you think about safety, edge cases, and potential biases in your implementation.*
 
 ### Using Tools like ChatGPT or Claude? 🤖
 
