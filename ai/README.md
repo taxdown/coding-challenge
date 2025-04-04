@@ -10,8 +10,6 @@ You will explore, evaluate, and implement the latest AI trends and techniques, w
 
 We value learning, experimentation, and pushing boundaries. We want you to bring your unique perspective, help us learn, and become an even more impactful AI expert with us (the real "Win - Win" 🚀).
 
-👂 *We value robust, interpretable, and well-documented AI solutions. Show us how you think about safety, edge cases, and potential biases in your implementation.*
-
 ## Take me to the challenge! 🤟
 
 One of the exciting areas we're working on involves using AI agents, powered by LLMs, to handle user interactions and automate certain tasks. However, automating actions, especially sensitive ones related to taxes is tricky stuff! A mistake could impact users or even cause issues with the Tax Agency.
