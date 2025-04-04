@@ -1,123 +1,141 @@
-# TaxDown AI Scientist challenge
+# TaxDown AI Scientist Challenge
 
-## Context
+## About the position
 
-At TaxDown, we use advanced language models (LLMs) to understand and accurately respond to our users' queries. One of the main approaches we are exploring is agents, which allow us to automate tasks related to certain intentions identified in these queries.
+You will be at the forefront of applying cutting-edge AI to revolutionize how we deliver TaxDown's high-quality, personalized tax advice. Our team is building intelligent agents that work alongside our expert tax advisors, helping them scale their work while maintaining our high standards of quality.
 
-Automating these actions is particularly delicate, as an error in interpreting the user's intention or executing an automated action could lead to significant consequences, such as customer loss or compromising situations with the Tax Agency.
+Data is at the core of our business, and we're uniquely positioned to rapidly develop AI solutions that deliver real, measurable impact. While we've had initial success with sophisticated prompting techniques, we need someone who can stay ahead of the curve in the fast-moving world of AI.
 
-Therefore, when building these agents, we aim to automate only those actions in which we have high confidence. Additionally, as an extra security measure, we incorporate guardrails that question and validate decisions before executing any automated action.
+You will explore, evaluate, and implement the latest AI trends and techniques, working closely with our engineers and tax experts to bring these powerful solutions to life. This is your chance to make your mark in a newly formed team, learn incredibly fast in a dynamic environment, and grow your expertise alongside passionate colleagues.
 
-## Objective
+We value learning, experimentation, and pushing boundaries. We want you to bring your unique perspective, help us learn, and become an even more impactful AI expert with us (the real "Win - Win" 🚀).
 
-Design and implement a **guardrail** that can:
 
-*   Accurately identify if the user's intention is to request an IBAN change, ensuring the agent uses the correct corresponding tool.
-*   Ensure that the IBAN change tool is only executed when the following conditions are met:
-    *   The agent has explicitly asked the client to confirm the IBAN change.
-    *   The client has provided, at the agent's request, the last 4 digits of the IBAN currently configured in their profile, and an additional tool has validated that these digits match correctly.
-*   Verify that the call to the IBAN change tool is always made with the appropriate and correctly configured arguments.
+## Take me to the challenge! 🤟
 
-## Provided Data
+One of the exciting areas we're working on involves using AI agents, powered by LLMs, to handle user interactions and automate certain tasks. However, automating actions, especially sensitive ones related to taxes is tricky stuff! A mistake could impact users or even cause issues with the Tax Agency.
 
-A synthetic dataset simulating conversations with the agent is provided. These conversations contain user messages (`human`), agent messages (`ai`), and tool responses (`tool`).
+That's why building robust **guardrails** is crucial. These guardrails need to ensure our agents only perform sensitive actions when they're *absolutely* sure and all conditions are met.
 
-The **dataset** is in JSON format and contains a list of labeled conversations.
+In this challenge (don't worry, we don't want you to do work for free, we'll keep it focused!), you'll design and implement a proof-of-concept for one AI guardrail specifically for the IBAN update process of our clients. This will give us great insight into how you approach these kinds of AI/NLP problems.
 
-A conversation is formed by a list of messages with the following structure:
+### The Goal 🎯
 
-*   `type`: type of message (`human`, `ai`, `tool`).
-*   `content`: content of the message or the tool's response if the message is of type `tool`.
-*   `tool_call`: dictionary with a function call. Only present in messages of type `ai`.
-    *   `name`: name of the tool.
-    *   `args`: dictionary with the arguments for the tool.
+This guardrail needs to:
 
-The label of the conversations (`fires_guardrail`) indicates whether the guardrail should be triggered or not.
+*   Accurately figure out if a user *really* wants to request an IBAN change and ensure the agent picks the right tool for the job.
+*   Make *absolutely sure* the IBAN change tool only runs if **all** these conditions are met:
+    *   The agent explicitly asked the client for confirmation to change the IBAN.
+    *   The client provided the last 4 digits of their *current* IBAN (as requested by the agent), AND another check confirmed these digits are correct.
+*   Verify that when the agent calls the IBAN change tool, it uses the right arguments, all correctly set up.
 
-### Tasks
+### What You Get (The Data) 🎁
 
-#### Data Analysis and Preprocessing
+We'll provide a synthetic **dataset** in `JSON` format. It's a list of simulated conversations between users (`human`), our AI agent (`ai`), and system tools (`tool`).
 
-Examine and analyze the **dataset** to understand the different tools the agent has. Perform the necessary transformations to facilitate the evaluation and testing of the guardrail. Analyze the quality and adequacy of the **dataset** in relation to the stated objectives.
+Each conversation is a list of messages structured like this:
 
-#### System Design
+*   `type`: Who's talking? (`human`, `ai`, `tool`).
+*   `content`: What they said (or the tool's output if `type` is `tool`).
+*   `tool_call`: If the `ai` decided to use a tool, you'll see this dictionary:
+    *   `name`: The tool's name.
+    *   `args`: The arguments passed to the tool.
 
-*   Explain which NLP techniques or AI models you consider most suitable for developing a guardrail with these characteristics.
-*   Compare the techniques using the following factors:
-    *   Computational and financial cost
-    *   Latency
-    *   Quality of results
-    *   Scalability
-    *   Maintainability
-    *   Training data requirements
-    *   Model interpretability
-*   Define and justify the behavior the guardrail will have (stopping the agent, correcting the tool call generation...).
+Crucially, each conversation has a label: `fires_guardrail` (true/false), telling you if our ideal guardrail *should* have stepped in for that conversation.
 
-### Implementation (Proof of Concept)
+Finally, here's the signature of the IBAN change tool our agent uses:
 
-Develop the solution you consider most promising to address the problem. The main focus of the evaluation will be on the technical approach related to AI models, especially the application of NLP techniques to solve the stated problem.
+```json
+{
+  "tool_name": "change_iban",
+  "tool_description": "Updates the user's bank account number (IBAN) in the system after verifying the last four digits of the currently saved user's IBAN and confirming the request.",
+  "tool_arguments": {
+    "new_iban": {
+      "type": "string",
+      "required": "true"
+    }
+  }
+}
+```
 
-Furthermore, the evaluation methodology you use to determine if the guardrail meets its objectives robustly and reliably will be particularly valued.
+### Your Tasks - Step by Step 🌟
 
-It should be noted that the objective is not to evaluate your software development skills or code best practices in depth. Therefore, we recommend focusing your time and effort on the technical design and execution of the AI solution, rather than on code architecture or formal aspects.
+1.  **Dig into the Data & Prep:**
+    *   Explore the `dataset`. What tools does the agent use? What do conversations look like?
+    *   Do any necessary preprocessing to make it easier to work with for building and testing your guardrail.
+    *   Quickly assess: Is this dataset good enough for the job? What are its strengths/weaknesses?
 
-The code must be understandable and executable. A Jupyter notebook is sufficient, provided you document the different approaches you explore clearly and structurally. You can use any framework or library you are comfortable with. The most important thing is the result and that you work similarly to how you would in your day-to-day work.
+2.  **Design Your Guardrail:**
+    *   What NLP or AI techniques make the most sense here? Explain your reasoning.
+    *   Compare potential techniques. Think about:
+        *   Cost (compute & money)
+        *   Speed (latency)
+        *   How well it works (quality)
+        *   Can it scale?
+        *   Is it easy to maintain?
+        *   What data does it need for training?
+        *   Can we understand *why* it makes a decision (interpretability)?
+    *   Define exactly what your guardrail will *do* when it triggers (e.g., stop the agent, suggest a correction, etc.). Justify your choice!
 
-### Evaluation
+3.  **Build It! (Proof of Concept):**
+    *   Implement the approach you think is most promising.
+    *   **Focus on the AI/NLP part.** We're more interested in your technical approach to the AI problem than perfect code architecture or following every single software engineering best practice (though clean, understandable code is always appreciated!).
+    *   A `Jupyter notebook` is perfectly fine for this. Use libraries/frameworks you're comfortable with. Show your work and explain your steps!
 
-A crucial part of this technical test is the methodology you use to evaluate the effectiveness and reliability of the implemented guardrail. You should:
+4.  **Show Us It Works! (Evaluation):**
+    *   This is super important! How will you *prove* your guardrail works reliably? Design an evaluation plan.
+    *   Choose the right metrics and explain why they're relevant here.
+    *   How would your evaluation approach give us confidence it would work in production?
+    *   Implement the evaluation and give us a critical analysis of your results. What worked well? What didn't?
 
-*   Design an evaluation framework that allows objective measurement of the guardrail's performance.
-*   Select and justify the metrics you consider most relevant for this specific problem.
-*   Explain how your evaluation approach would ensure the guardrail functions correctly in a real production environment.
-*   Implement this evaluation and critically analyze the obtained results.
+5.  **Thinking Ahead (Scalability & Improvements):**
+    *   How could your solution handle way more conversations in real-time?
+    *   Any ideas to make the `dataset` even better for assessing guardrails like this? How would you implement those improvements?
 
-### Scalability and Improvements
+👂 *Everything you consider "Best Practices" for AI/ML development (like clear code, documentation, and especially **testing your logic**) is encouraged! ("We **LOVE** seeing thoughtful testing")*
 
-*   Discuss how the implemented solution could be scaled to handle a large volume of messages in real time.
-*   Propose possible improvements to the **dataset** so that the guardrail evaluations are as reliable as possible. Explain how you would carry them out.
+### Using Tools like ChatGPT or Claude? 🤖
 
-### Use of tools like ChatGPT or Claude
+No problem! Many of us use them. If you do, just be transparent:
 
-We are aware that many people nowadays turn to tools like `ChatGPT` or `Claude` to develop their solutions. If you decide to use any of these tools during the development of your solution, it is essential that you:
+*   Share links to your conversations.
+*   Document the prompts you used.
+*   Show us the different iterations you went through.
 
-*   Share the links to the conversations you have with them.
-*   Document any prompt you use.
-*   Provide all the iterations you perform during the development process.
+### Time Estimate & Tips ⏰
 
-### Deliverables
+This challenge is designed to take roughly **3-6 hours**. We know the scope is ambitious! Don't stress if you can't implement *everything* perfectly.
 
-The deliverable must be a **GitHub repository** to which you should grant access to the user **@corrius**.
+If time gets tight (say, after 4 hours):
 
-This repo must contain:
+*   Focus on getting a **basic, functional version** of the guardrail working.
+*   For parts you didn't implement, **explain conceptually** how you *would* have done them.
+*   Clearly document what's implemented and what's still in the design/conceptual phase.
 
-1.  A `README.md` file describing your approach, including:
-    1.  Data analysis
-    2.  Design of the approach (or approaches) to develop the guardrail.
-    3.  Justification for the implemented solution.
-    4.  Clear instructions to run the code.
-2.  The source code (`Jupyter Notebook`):
-    1.  With the guardrail implementation.
-    2.  With the results of your solution's evaluation.
-3.  Links to conversations and prompts used with tools like `ChatGPT` or `Claude` (if applicable).
+👂 *Psst, remember to include clear instructions on how to set up and run your code!*
 
-### Completion Time
+### How We'll Look At It 👀
 
-The test is designed for you to complete in about 3-6 hours. We know the scope is ambitious, so don't worry if you can't implement absolutely everything.
+What we value most is your **technical thinking** and how you reason about the problem. A well-thought-out approach, even if not 100% implemented, is better than a rushed, superficial solution.
 
-If you see that after 4 hours you won't be able to finish everything you'd like, we suggest you:
+We'll be looking at:
 
-*   Focus on having a basic but functional version of the guardrail.
-*   For the parts you don't have time to implement, explain how you would do them at a conceptual level.
-*   Clearly document what you have implemented and what you have left in the design phase.
+*   How deeply you understood the problem.
+*   Your creativity, effectiveness, and how well you justify your solution.
+*   The technical quality of your AI/NLP approach.
+*   The quality and suitability of your evaluation plan and results.
 
-### Evaluation
+## How can I share my solution? 🔥
 
-What we value most is your technical approach and your way of reasoning about the problem, not so much the amount of code you produce. We prefer a well-thought-out solution, even if not fully implemented, over a complete but superficial implementation.
+You've probably been using Git, right? 😉 How about creating a private GitHub repo and inviting us: [Joaquin Fernández](https://github.com/JoaquinFernandez) and [Alvaro Correa](https://github.com/corrius).
 
-The evaluation will consider:
+Your repo should contain:
 
-*   The depth of your analysis and understanding of the problem.
-*   The creativity, effectiveness, and justification of the proposed solution.
-*   The technical quality of the AI models and the problem resolution.
-*   The quality and adequacy of the proposed evaluation framework.
+1.  A `README.md` explaining your approach (data analysis, design, justification, run instructions).
+2.  Your code (e.g., `Jupyter Notebook`) with the guardrail implementation.
+3.  The results of your evaluation.
+4.  Links/info about any AI assistant usage (if applicable).
+
+This way, we can review your awesome work and have it ready for the next step: a chat with the team! 👻
+
+Good luck with the challenge! Enjoy it and do your best!
