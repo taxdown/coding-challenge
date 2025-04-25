@@ -55,7 +55,7 @@ And last but not least, it would be great if you add tests. Easy and simple no? 
 
 ## How can I share my solution? 🔥
 
-I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us [Thomas Trujillo](https://github.com/tjtrujillo)
+I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us [Taxdown](https://github.com/taxdownGH)
 
 This way, we can review your code and have it at hand for the next step, a personal interview! 👻
 
