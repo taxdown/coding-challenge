@@ -127,7 +127,7 @@ Puedes usar datos mockeados, localStorage, o implementar una API simple. Como re
 - **Sé pragmático**: No over-engineering, pero tampoco shortcuts que comprometan calidad
 
 ## Entrega
-Comparte tu repositorio privado con **@ferramos** para la revisión.
+Comparte tu repositorio privado con [Fernán Ramos](https://github.com/Fernan-Ramos) para la revisión.
 
 ---
 
