@@ -1,129 +1,136 @@
+# TaxDown Frontend Challenge
 
-# TaxDown frontend challenge
+## Sobre la posición 💻
+Como Frontend Engineer, buscamos a alguien que sepa aplicar las mejores soluciones a los problemas que pueden aparecer en una aplicación web moderna. Esta prueba evaluará tu capacidad para diseñar arquitecturas escalables y mantener código de calidad profesional.
 
-## About the position 💻
+## Lo que buscamos evaluar
+- **Arquitectura de componentes**: Diseño escalable y reutilizable
+- **Principios SOLID**: Aplicación práctica en frontend  
+- **Abstracción**: Separación de responsabilidades y dependencias
+- **Gestión de estado**: Solución apropiada para el problema
+- **Gestión de rutas**: Navegación fluida y consistente
+- **Testing**: Cobertura y calidad de las pruebas
+- **Criterio técnico**: Justificación de decisiones arquitecturales
 
-Being a **Frontend Engineer** means that you know how to apply the best solutions to the problems that can appear in the client of a Web Application (don't forget about the communication with backend services!).
-So we are going to test that and see how good of a developer you are regarding the frontend part of a project! 🔥
+## El Problema 🎯
 
-## Take me to the challenge! 🤟
+Necesitas construir una **aplicación de gestión de declaraciones fiscales** que permita:
 
-In this challenge (wont be long, we promise), you'll be using **React** to create a SPA.
+### 1. Autenticación de Usuario
+- Implementa un sistema de login (puede ser simulado)
+- Una vez autenticado, el usuario accede al dashboard principal
 
-# What we are looking for
+### 2. Dashboard de Declaraciones
+- Muestra una lista de declaraciones fiscales del usuario
+- Cada declaración tiene información básica (año, nombre, estado, etc.)
+- Permite acceder a cada declaración para gestionar submissions
 
-- Structure organization
-- Component based Architecture
-- Apply SOLID principles
-- Abstraction for external libraries
-- Store managment
-- Route managment
-- Code testing
+### 3. Sistema de Formularios Dinámicos
+**Este es el core del challenge:**
+- Cada declaración tiene un formulario asociado con campos dinámicos
+- Los campos pueden variar en tipo, validaciones y configuración
+- El formulario debe renderizarse dinámicamente basado en una configuración
+- Debe manejar diferentes tipos de input (text, number, select, etc.)
+- Debe implementar validaciones configurables
 
-We use vite like bundler, but you are free to use another plataform like Next, CRA or webpack to create the SPA and transpile the code.
+### 4. Gestión de Submissions
+- Permite crear nuevas submissions completando el formulario
+- Almacena y lista las submissions realizadas para cada declaración
+- Permite filtrar/buscar submissions por diferentes criterios
+- **Bonus**: Edición y eliminación de submissions
 
-## First step 🥇
+## Requisitos Técnicos
 
-First, you have to create a login form that allows a user to access the application.
+### Obligatorios
+- **React** como biblioteca base
+- **Testing** con cobertura mínima del 60%
+- **TypeScript** preferiblemente
+- Código limpio y documentado
 
-Once logged in, the application will show a dashboard with a list of active user taxes. The information of these taxes will be obtained from a fake API built with **json-server** or similar.
-<https://github.com/typicode/json-server>
+### Libertad Total
+- **Gestión de estado**: Context, Redux, Zustand, Jotai, etc.
+- **Routing**: React Router, Next.js, Reach Router, etc.
+- **Styling**: CSS modules, Styled Components, Tailwind, etc.
+- **Forms**: React Hook Form, Formik, custom solution, etc.
+- **Data fetching**: Fetch, Axios, SWR, React Query, etc.
+- **Build tool**: Vite, Next.js, CRA, Webpack, etc.
 
-``` json
-endpoint: /taxes
+## Datos de Ejemplo
 
+Puedes usar datos mockeados, localStorage, o implementar una API simple. Como referencia:
+
+```json
+// Declaraciones
 {
- "taxes":  [
-  {
-   "id":  "1",
-   "name":  "Tax Season 2021",
-   "year": "2021",
-  },
-  {
-   "id":  "2",
-   "name":  "Tax Season 2020",
-   "year": "2020",
-  },
- ]
+  "taxes": [
+    {
+      "id": "1",
+      "name": "Declaración 2023",
+      "year": "2023",
+      "status": "active"
+    }
+  ]
 }
 
-```
-The information obtained from the API (store) must be managed by **React Query**, we use **React Query** for managing the asynchronous data, so it required.
-
-## Second step 🥈
-
-Each tax will contain a button that will allow adding submissions.
-
-When the button is clicked, it will take you to a new screen where a request will be made to the fake API to obtain a list of inputs.
-
-``` json
-/taxes/{id}/form
+// Configuración de formulario dinámico
 {
- "inputFields":  [
-  {
-   "id":  "name",
-   "label":  "Name",
-   "placeholder":  "Your first name",
-   "type":  "text",
-   "maxLength":  20
-  },
-  {
-   "id":  "surname",
-   "label":  "Surname",
-   "placeholder":  "Your last name",
-   "type":  "text",
-   "maxLength":  40
-  },
-  {
-   "id":  "age",
-   "label":  "Age",
-   "placeholder":  "Your age",
-   "type":  "number",
-  }
- ]
+  "formConfig": [
+    {
+      "id": "name",
+      "type": "text",
+      "label": "Nombre",
+      "required": true,
+      "maxLength": 20
+    },
+    {
+      "id": "income",
+      "type": "number",
+      "label": "Ingresos anuales",
+      "required": true,
+      "min": 0
+    }
+  ]
 }
 ```
 
-Here, a dynamic form should be rendered based on the inputs defined in the JSON response.
+## Entregables 📦
 
-Remember that some fields may have validations in their keys (`maxLength` for the text inputs) and they can increase or change in the future.
+1. **Código fuente** en repositorio privado
+2. **README** con:
+   - Instrucciones de instalación y ejecución
+   - Decisiones arquitecturales y justificación
+   - Tecnologías elegidas y por qué
+   - Próximos pasos o mejoras identificadas
+3. **Tests** ejecutables
+4. **Aplicación desplegada** (opcional pero valorado)
 
-## Third  step 🥉 (These medals should go from bronce to gold)
+## Evaluación 📊
 
-When the inputs are completed and the user clicks on submit button a POST request to **/taxes/{id}/form** with the values of the form will be made.
+### Criterios principales:
+- **Arquitectura**: ¿Es escalable y mantenible?
+- **Calidad de código**: ¿Es legible y sigue buenas prácticas?
+- **Flexibilidad**: ¿El sistema de formularios es realmente dinámico?
+- **Testing**: ¿Las pruebas aportan confianza al sistema?
+- **Criterio**: ¿Las decisiones técnicas están bien fundamentadas?
 
-A list of submissions should be created in the store for that specific tax.
+### En la defensa oral evaluaremos:
+- Justificación de decisiones arquitecturales
+- Capacidad de extensión del sistema
+- Identificación de trade-offs
+- Propuestas de mejora y escalabilidad
 
-**Note**: _It will be submissions lists for the different taxes_.
+## Filosofía de la Prueba 🎭
 
-All submissions by mapping them so we can see the key/value pairs introduced by the user.
+- **Usa IA**: Está permitido y es bienvenido el uso de herramientas de IA
+- **Piensa en producción**: Como si fuera código real que va a evolucionar
+- **Demuestra madurez**: Esperamos código de nivel senior
+- **Sé pragmático**: No over-engineering, pero tampoco shortcuts que comprometan calidad
 
-Would be a screen where will be showed the taxes submissions and where the user can filter by tax year, name, surname and age
+## Entrega
+Comparte tu repositorio privado con **@ferramos** para la revisión.
 
-``` yaml
- Tax: 2021
-  Submission 1
-   Name: Bruce
-   Surname: Wayne
-   Age: 26
-  Submission 2
-   Name: Clark
-   Surname: Kent
-   Age: 22
-```
+---
 
-And last but not least, it would be great if you added one or two **tests** to check for render stability or proper mapping of values ⭐️. We use **jest** and **react-testing-library** to testing.
+**¡Disfruta el reto y demuestra tu mejor nivel!** 🚀
 
-Easy and simple no? **So we are done!** 🚀!
-
-## Optional
-
-Add the option to edit and delete each submission.
-
-## How can I share my solution?
-
-I guess you used Git all the way here and made a few commits already, so how about creating a private repo and inviting us [Fernán Ramos](https://github.com/Fernan-Ramos)
-
-This way, we can review your code and have it at hand for the next step, a personal interview! 👻
-
-Good luck with the challenge! Enjoy it and do your best!
+*Tiempo estimado: 4-8 horas (ajusta según tu disponibilidad)* 
