@@ -1,140 +1,120 @@
-# TaxDown AI Scientist Challenge
+# TaxDown AI Scientist / Engineer Challenge
 
 ## About the position
 
-You will be at the forefront of applying cutting-edge AI to revolutionize how we deliver TaxDown's high-quality, personalized tax advice. Our team is building intelligent agents that work alongside our expert tax advisors, helping them scale their work while maintaining our high standards of quality.
+You will be helping us shape the future of how millions of people interact with AI-powered assistants.  
+At **TaxDown**, we’ve been running production LLM systems for more than two years, serving **hundreds of thousands of users** and assisting our experts with **hundreds of thousands of AI-generated responses**.
 
-Data is at the core of our business, and we're uniquely positioned to rapidly develop AI solutions that deliver real, measurable impact. While we've had initial success with sophisticated prompting techniques, we need someone who can stay ahead of the curve in the fast-moving world of AI.
+Now we’re looking for someone who can help us push the boundaries even further — designing, evaluating, and iterating on intelligent agents that can reason, search, and improve over time.
 
-You will explore, evaluate, and implement the latest AI trends and techniques, working closely with our engineers and tax experts to bring these powerful solutions to life. This is your chance to make your mark in a newly formed team, learn incredibly fast in a dynamic environment, and grow your expertise alongside passionate colleagues.
+We want you to bring your experience, creativity, and scientific rigor to our AI stack.  
+And of course, we hope you’ll learn a lot from us too. The goal is mutual growth — the real “Win-Win” 🚀
 
-We value learning, experimentation, and pushing boundaries. We want you to bring your unique perspective, help us learn, and become an even more impactful AI expert with us (the real "Win - Win" 🚀).
+---
 
 ## Take me to the challenge! 🤟
 
-One of the exciting areas we're working on involves using AI agents, powered by LLMs, to handle user interactions and automate certain tasks. However, automating actions, especially sensitive ones related to taxes is tricky stuff! A mistake could impact users or even cause issues with the Tax Agency.
+In this challenge (don’t worry, it’s short and fun — we don’t want free work 😉), you’ll design a **multi-agent system** for a **motorbike workshop assistant**.
 
-That's why building robust **guardrails** is crucial. These guardrails need to ensure our agents only perform sensitive actions when they're *absolutely* sure and all conditions are met.
+The idea is to create an intelligent system that can **understand different types of questions** and **route them** to the right specialized agent.
 
-In this challenge (don't worry, we don't want you to do work for free, we'll keep it focused!), you'll design and implement a proof-of-concept for one AI guardrail specifically for the IBAN update process of our clients. This will give us great insight into how you approach these kinds of AI/NLP problems.
+You can use **any LLM**, **framework**, or **stack** you prefer (LangChain, DSPy, custom code…).  
+You can also use AI tools (ChatGPT, Claude, Copilot, etc.) to help you — just tell us how.
 
-### The Goal 🎯
+---
 
-This guardrail needs to:
+## First step 🌟
 
-*   Accurately figure out if a user *really* wants to request an IBAN change and ensure the agent picks the right tool for the job.
-*   Make *absolutely sure* the IBAN change tool only runs if **all** these conditions are met:
-    *   The agent explicitly asked the client for confirmation to change the IBAN.
-    *   The client provided the last 4 digits of their *current* IBAN (as requested by the agent), AND another check confirmed these digits are correct.
-*   Verify that when the agent calls the IBAN change tool, it uses the right arguments, all correctly set up.
+Design a system that can receive questions from users and decide which agent should answer them.
 
-### What You Get (The Data) 🎁
+Your system should be able to handle three types of questions:
+1. **General questions** — about the workshop itself (schedule, prices, contact…).
+2. **HR questions** — internal policies for employees (vacations, equipment, permissions…).
+3. **Technical questions** — about motorbike maintenance and repair manuals (e.g., torque values, fluid capacities).
 
-We'll provide a synthetic **dataset** in `JSON` format. It's a list of simulated conversations between users (`human`), our AI agent (`ai`), and system tools (`tool`).
+Each agent should respond based on different information sources:
+- **General Agent:** uses workshop info.
+- **HR Agent:** uses HR policies.
+- **Manuals Agent:** retrieves information from the technical manuals in `/data/manuals/`.
 
-Each conversation is a list of messages structured like this:
+You can use **any LLM**, **framework**, or **stack** you prefer (LangChain, DSPy, custom code…).  
+You can also use AI tools (ChatGPT, Claude, Copilot, etc.) to help you — just tell us how.
 
-*   `type`: Who's talking? (`human`, `ai`, `tool`).
-*   `content`: What they said (or the tool's output if `type` is `tool`).
-*   `tool_call`: If the `ai` decided to use a tool, you'll see this dictionary:
-    *   `name`: The tool's name.
-    *   `args`: The arguments passed to the tool.
+That said, we’ll pay attention to **code quality and architecture**.  
+We expect clear, extensible, and modular code — not a single messy script.  
+Design decisions that show good practices like **SOLID**, clean interfaces, or proper separation of concerns will be valued positively.
 
-Crucially, each conversation has a label: `fires_guardrail` (true/false), telling you if our ideal guardrail *should* have stepped in for that conversation.
+💡 You decide how to design the routing and the agents — chain, graph, router LLM, or logic rules.
 
-Finally, here's the signature of the IBAN change tool our agent uses:
+---
 
-```json
-{
-  "tool_name": "change_iban",
-  "tool_description": "Updates the user's bank account number (IBAN) in the system after verifying the last four digits of the currently saved user's IBAN and confirming the request.",
-  "tool_arguments": {
-    "new_iban": {
-      "type": "string",
-      "required": "true"
-    }
-  }
-}
-```
+## Second step 🧠
 
-### Your Tasks - Step by Step 🌟
+Evaluate your system using the provided **`EVAL.md`** file.
 
-1.  **Dig into the Data & Prep:**
-    *   Explore the `dataset`. What tools does the agent use? What do conversations look like?
-    *   Do any necessary preprocessing to make it easier to work with for building and testing your guardrail.
-    *   Quickly assess: Is this dataset good enough for the job? What are its strengths/weaknesses?
+This evaluation set includes different types of questions:
+- Simple ones that can be answered from a single manual
+- Others that require combining information from multiple sources
+- System-level questions (e.g. carburetion vs. injection)
+- And two questions with **no valid answer** — your agent should detect and handle those gracefully, rather than guessing
+    
+You should:
+- Run your system on all questions in `EVAL.md`
+- Show the reasoning traces (how routing decisions were made, what each agent did)
+- Identify one case that didn’t work well, analyze why, and iterate on your prompt or logic to improve it
 
-2.  **Design Your Guardrail:**
-    *   What NLP or AI techniques make the most sense here? Explain your reasoning.
-    *   Compare potential techniques. Think about:
-        *   Cost (compute & money)
-        *   Speed (latency)
-        *   How well it works (quality)
-        *   Can it scale?
-        *   Is it easy to maintain?
-        *   What data does it need for training?
-        *   Can we understand *why* it makes a decision (interpretability)?
-    *   Define exactly what your guardrail will *do* when it triggers (e.g., stop the agent, suggest a correction, etc.). Justify your choice!
+🧩 _The goal is to understand how you evaluate, debug, and improve your own system — not to get everything right on the first try._
 
-3.  **Build It! (Proof of Concept):**
-    *   Implement the approach you think is most promising.
-    *   **Focus on the AI/NLP part.** We're more interested in your technical approach to the AI problem than perfect code architecture or following every single software engineering best practice (though clean, understandable code is always appreciated!).
-    *   A `Jupyter notebook` is perfectly fine for this. Use libraries/frameworks you're comfortable with. Show your work and explain your steps!
+---
 
-4.  **Show Us It Works! (Evaluation):**
-    *   This is super important! How will you *prove* your guardrail works reliably? Design an evaluation plan.
-    *   Choose the right metrics and explain why they're relevant here.
-    *   How would your evaluation approach give us confidence it would work in production?
-    *   Implement the evaluation and give us a critical analysis of your results. What worked well? What didn't?
+## Third step 🧰
 
-5.  **Thinking Ahead (Scalability & Improvements):**
-    *   How could your solution handle way more conversations in real-time?
-    *   Any ideas to make the `dataset` even better for assessing guardrails like this? How would you implement those improvements?
+Document your work.
 
-👂 *We value robust, interpretable, and well-documented AI solutions. Show us how you think about safety, edge cases, and potential biases in your implementation.*
+Include:
+- How to run your system.
+- How to reproduce the evaluation.
+- A short note on what tools or AI assistants you used (ChatGPT, Claude, etc.) and in what way.
+- Any reflections on how you’d take this to production.
+    
+📝 _We’re more interested in your reasoning and iteration process than in production polish._
 
-### Using Tools like ChatGPT or Claude? 🤖
+---
 
-No problem! Many of us use them. If you do, just be transparent:
+## Rules for using AI as an assistant 🤖
 
-*   Share links to your conversations.
-*   Document the prompts you used.
-*   Show us the different iterations you went through.
+You can use AI tools like ChatGPT, Claude, Copilot, Codex, etc. to help you during the challenge — just as you would at work.  
+These rules only apply to the AI that helps you solve the challenge (not the AI agents you build).
 
-### Time Estimate & Tips ⏰
+1. **Transparency:** mention where and how you used AI.
+2. **Responsibility:** you’re still accountable for the final code and decisions.
+3. **Attribution:** cite any external or AI-generated content you include.
+4. **Cost:** if you use paid APIs, include a brief note on estimated usage.
+    
+---
 
-This challenge is designed to take roughly **3-6 hours**. We know the scope is ambitious! Don't stress if you can't implement *everything* perfectly.
+## What we’ll be looking for 👌
 
-If time gets tight (say, after 4 hours):
+Some of the things we’d love to find in your solution (not necessarily all):
+- Clear reasoning behind design choices
+- Well-structured prompts and data flow
+- Simple but functional retrieval system
+- Traceable logic and introspection
+- Evaluation and iteration methodology
+- Pragmatic engineering mindset
 
-*   Focus on getting a **basic, functional version** of the guardrail working.
-*   For parts you didn't implement, **explain conceptually** how you *would* have done them.
-*   Clearly document what's implemented and what's still in the design/conceptual phase.
-
-👂 *Psst, remember to include clear instructions on how to set up and run your code!*
-
-### How We'll Look At It 👀
-
-What we value most is your **technical thinking** and how you reason about the problem. A well-thought-out approach, even if not 100% implemented, is better than a rushed, superficial solution.
-
-We'll be looking at:
-
-*   How deeply you understood the problem.
-*   Your creativity, effectiveness, and how well you justify your solution.
-*   The technical quality of your AI/NLP approach.
-*   The quality and suitability of your evaluation plan and results.
+---
 
 ## How can I share my solution? 🔥
 
-You've probably been using Git, right? 😉 How about creating a private GitHub repo and inviting us: [Joaquin Fernández](https://github.com/JoaquinFernandez) and [Alvaro Correa](https://github.com/corrius).
+Create a **private GitHub repo** with your solution and **add @corrius as a collaborator**.
 
-Your repo should contain:
+Include:
+- `RUN.md` — how to execute your system
+- `TRACE.md` — sample traces of your agents’ reasoning
+- `EVAL.md` — your mini evaluation and analysis
+- `AI_USAGE.md` — how you used AI tools during the challenge
 
-1.  A `README.md` explaining your approach (data analysis, design, justification, run instructions).
-2.  Your code (e.g., `Jupyter Notebook`) with the guardrail implementation.
-3.  The results of your evaluation.
-4.  Links/info about any AI assistant usage (if applicable).
+That’s it. We’ll review your work and schedule a short technical conversation to dive deeper together. 👻
 
-This way, we can review your awesome work and have it ready for the next step: a chat with the team! 👻
-
-Good luck with the challenge! Enjoy it and do your best!
+Good luck with the challenge — and have fun with it! 🏍️

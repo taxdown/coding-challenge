@@ -1,0 +1,10 @@
+- Jornada laboral: 40 h semanales, lunes a viernes. Turnos rotativos mañana y tarde.
+- Vacaciones: 23 días hábiles al año, solicitud con 30 días de antelación en HRIS.
+- Asuntos propios: 2 días al año, aprobación del manager directa.
+- EPIs obligatorios en taller: botas de seguridad, guantes nitrilo, gafas, protección auditiva según tarea.
+- Formación y certificaciones: el taller cubre 1 curso técnico anual por empleado previa aprobación.
+- Bajas médicas: comunicar antes de inicio del turno y aportar parte en 48 h.
+- Horas extra: requieren autorización previa. Se compensan con tiempo o se pagan según convenio.
+- Uso de herramientas: queda prohibido el uso personal de herramientas del taller sin autorización.
+- Prevención de riesgos: obligatorio seguir los procedimientos y reportar incidentes en menos de 24 h.
+- Política de guardias: fines de semana alternos bajo calendario trimestral publicado por HR.
